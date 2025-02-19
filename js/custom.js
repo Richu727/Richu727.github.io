@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        fetch('https://script.google.com/macros/s/AKfycbyVYkfTrr4MisfFqI08-I7gXS0i1X572psGLqYqISBKU4cC_iwa0Uid_cmTlYpQsvQ/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbwUc5eSoLIKGOEw8UGVHDnEtwao0OQZUFp4pAY4NA/dev', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
