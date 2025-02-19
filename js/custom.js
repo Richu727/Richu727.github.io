@@ -8,44 +8,32 @@ function getYear() {
 getYear();
 
 
+document.getElementById('dataForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
 
+    const data = {
+        name: name,
+        email: email,
+        phone: phone
+    };
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('dataForm');
-    const successCard = document.getElementById('successCard');
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        fetch('https://script.google.com/macros/s/AKfycbwUc5eSoLIKGOEw8UGVHDnEtwao0OQZUFp4pAY4NA/dev', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: serializeForm(this)
-        })
-        .then(response => {
-            if (response.ok) {
-                form.style.display = 'none';
-                successCard.style.display = 'flex';
-            }
-        })
-        .catch(error => {
-            document.getElementById('status').textContent = 
-                'Request failed: ' + error.message;
-        });
+    fetch('https://script.google.com/macros/s/AKfycbyQlcYHAB6Rk7KkXBtJeJHIgghhc33BbzbsXp236Je43OuMLwfEXE1cSsL3o8JSMjU/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        // Hide the form and show the success card
+        document.getElementById('dataForm').style.display = 'none';
+        document.getElementById('successCard').style.display = 'flex';
+    })
+    .catch(error => {
+        document.getElementById('status').textContent = 'Request failed: ' + error.message;
     });
-
-    function serializeForm(form) {
-        const inputs = form.querySelectorAll('input');
-        let serialized = '';
-        for (let i = 0; i < inputs.length; i++) {
-            if (inputs[i].name !== undefined) {
-                serialized += `${encodeURIComponent(inputs[i].name)}=${encodeURIComponent(
-                    inputs[i].value
-                )}&`;
-            }
-        }
-        return serialized.slice(0, -1);
-    }
 });
