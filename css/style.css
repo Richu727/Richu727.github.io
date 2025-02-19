@@ -3,6 +3,8 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .layout_padding {
@@ -941,4 +943,39 @@ a:focus {
 .footer_section p a {
   color: inherit;
 }
-/*# sourceMappingURL=style.css.map */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input[type="submit"] {
+  background-color: #ddc2a6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100px;
+  justify-content: center;
+}
+#status {
+  margin-top: 10px;
+  color: red;
+}
+#successCard {
+  display: none;
+}

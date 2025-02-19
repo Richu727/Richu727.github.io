@@ -92,38 +92,27 @@
           Contact Us
         </h2>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="btn_box">
-                <button>
-                  SEND
-                </button>
-              </div>
-            </form>
-          </div>
+      <form id="dataForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
         </div>
-        <div class="col-md-6 ">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap"></div>
-            </div>
-          </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
         </div>
+        <div class="form-group">
+          <label for="phone">Phone (optional):</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+      <!-- Success Card -->
+      <div id="successCard">
+        <div class="success-message">Success!</div>
+        <div class="success-description">Your information has been submitted successfully.</div>
       </div>
+      <script src="scripts.js"></script>
     </div>
   </section>
   <!-- end contact section -->
