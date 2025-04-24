@@ -255,6 +255,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .slider_section .row {
@@ -265,7 +266,8 @@ a:focus {
 
 .slider_section #customCarousel1 {
   width: 100%;
-  position: unset;
+  position: relative;
+  overflow: hidden;
 }
 
 .slider_section .detail-box {
@@ -357,7 +359,7 @@ a:focus {
 
 .slider_bg_box {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: -1;
   display: -webkit-box;
@@ -373,7 +375,7 @@ a:focus {
 }
 
 .slider_bg_box img {
-  height: 100%;
+  height: 120%;
 }
 
 .service_section {
